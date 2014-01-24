@@ -56,5 +56,6 @@ class Room(object):
 	def setPos(self, pos):
 		self.pos = pos
 
+	# returns 0 based tuple (3 x 3 map return (2, 2)). 0 based is more useful to most functions, though less intuitive
 	def getSize(self):
 		return self.tiles.size()
