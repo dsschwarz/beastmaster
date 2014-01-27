@@ -35,8 +35,9 @@ require(["map", "objects"], function(_m, _o) {
 					if (obj.direction === event.direction) {
 						obj.moving = false;
 					}
+				} else {
+					obj.moving = false;
 				}
-				obj.moving = false;
 				if (event.pos) {
 					obj.pos = event.pos;
 				}
