@@ -1,4 +1,3 @@
-from tile import Tile
 class TileMatrix(object):
 	# creates 2d array from file (not implented)
 	def __init__(self, size, defValue=None):
@@ -67,3 +66,10 @@ class TileMatrix(object):
 			"left":  left,
 			"right": right
 		}
+
+class Tile(object):
+	def __init__(self, type) :
+		self.type = type
+
+	def update(self):
+		pass

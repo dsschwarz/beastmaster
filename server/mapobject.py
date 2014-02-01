@@ -47,6 +47,8 @@ class BaseMapObj(object):
 
 class Actor(BaseMapObj):
 	"""Player class and maybe NPC"""
+	health = 100
+	maxHealth = 100
 	def __init__(self, pos, room=None):
 		super(Actor,self).__init__(pos)
 		# Maintain reference to containing room
@@ -57,13 +59,18 @@ class Actor(BaseMapObj):
 			self.room = room
 
 	def damage(self, type, damage, callback):
-		pass
+		self.health -= damage
+		if (self.health < 0):
+			self.delete()
 
 	def getHealth(self):
-		pass
+		return self.health
 
-	def setHealth(self):
-		pass
+	def setHealth(self, health, setMaxHealth=False):
+		if (setMaxHealth):
+			self.health = self.maxHealth = health
+		else:
+			self.health = min(health, self.maxHealth)
 
 	def addEffect(self, effect):
 		pass
