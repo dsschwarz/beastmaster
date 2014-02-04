@@ -1,4 +1,3 @@
-// TODO: Split this up once a module system is chosen. Maybe use require.js
 requirejs.config({
 	baseUrl: "js"
 })
